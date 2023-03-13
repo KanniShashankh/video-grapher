@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ffmpeg-grapher",
     "public": "dist",
     "ignore": [
       "firebase.json",
