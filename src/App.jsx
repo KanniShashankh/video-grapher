@@ -43,34 +43,41 @@ function App() {
       <div className="App">
 
         <div>
-        <p className="font-mono text-6xl mt-4 text-center"> The Video Grapher</p>
+        <p className="font-mono p-52 text-6xl mt-4 text-center"> The Video Grapher</p>
         </div>
 
-        { video && (<video
+       
+        { video && ( <div className='flex space-x-4 justify-center mt-10'><video
             className='m-6 text-center'
             controls
+            fluid={false}
+            width={480}
+            height={272}
             src={URL.createObjectURL(video)}>
 
-        </video>
+        </video></div>
         ) 
         }
         
 
-        <input className='text-center my-4' type="file" onChange={(e) => {
+        <input id='myInput' className='text-center justify-between my-4' type="file" name='Upload File' onChange={(e) => {
           const item = e.target.files?.item(0)
           setFileName(item.name)
           setVideo(item)
           console.log(fileName)
-        }} />
+        }} 
+        style={{display: 'none'}} 
+        />
+        <label htmlFor="myInput" className='mt-4 h-5 '>Upload File</label>
         {video && (
-          <div>
+          <div className='flex space-x-4 justify-center mt-10'>
             <button onClick={convertToGif}>Make GIF</button>
             <button onClick={convertToWaveform}>Make Audio Waveform</button>
           </div>
         )}
-
-        { gif && <img src={gif} className='text-center' />}
-        
+        <div className='flex space-x-4 justify-center mt-10'>
+        { gif && <img src={gif} className='text-center justify-center mt-10' />}
+        </div>
       </div>
 
   ) : ( <p>Loading...</p> );
