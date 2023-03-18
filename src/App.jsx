@@ -66,7 +66,7 @@ function App() {
           setVideo(item)
           console.log(fileName)
         }} 
-        style={{display: 'none'}} 
+        style={{display: 'none '}} 
         />
         <label htmlFor="myInput" className='mt-4 h-5 '>Upload File</label>
         {video && (
