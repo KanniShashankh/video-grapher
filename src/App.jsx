@@ -27,6 +27,7 @@ function App() {
     console.log()
   }
   const load = async () => {
+    console.log("BOOT");
     await ffmpeg.load();
     setReady(true);
   }
