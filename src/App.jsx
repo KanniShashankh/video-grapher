@@ -3,7 +3,6 @@ import './App.css';
 
 import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
 const ffmpeg = createFFmpeg({ log: true
-,  corePath: "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js",
 });
 
 function App() {
@@ -25,15 +24,8 @@ function App() {
     const data = ffmpeg.FS('readFile', 'out.gif');
     const url = URL.createObjectURL(new Blob([data.buffer], { type: 'image/gif' }));
     setGif(url)
-    console.log(url);
-    console.log()
   }
   const load = async () => {
-    console.log("BOOTED");
-    if (crossOriginIsolated) {
-      console.log("IT IS ENABLED")
-      // SharedArrayBuffer is available
-  }
     await ffmpeg.load();
     setReady(true);
   }
