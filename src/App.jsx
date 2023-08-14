@@ -41,8 +41,20 @@ function App() {
     load();
   }, [])
 
+
   const [data, setData] = useState();
   const [fileName, setFileName] = useState();
+
+  useEffect(() => {
+    if (video || gif || fileName) {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });
+    }
+  }, [video, gif, fileName])
+
+
 
   return ready ? (
     
@@ -70,7 +82,6 @@ function App() {
           const item = e.target.files?.item(0)
           setFileName(item.name)
           setVideo(item)
-          console.log(fileName)
         }} 
         style={{display: 'none '}} 
         />
