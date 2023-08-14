@@ -30,11 +30,22 @@ function App() {
   }
   const load = async () => {
     console.log("BOOTED");
+    if (crossOriginIsolated) {
+      console.log("IT IS ENABLED")
+      // SharedArrayBuffer is available
+  }
     await ffmpeg.load();
     setReady(true);
   }
 
   useEffect(() => {
+    function addTrialToken(tokenContents) {
+      const tokenElement = document.createElement('meta');
+      tokenElement.httpEquiv = 'origin-trial';
+      tokenElement.content = tokenContents;
+      document.head.appendChild(tokenElement);
+    }
+    addTrialToken("AgDi8VIu6wohuoHEIlfO1mpNxW7+MH8EHRkkv8mxNxpRsMBxW13lte2NZ4tDPPfIz1q1ewrscBZCQVksBvNUxAMAAACAeyJvcmlnaW4iOiJodHRwczovL2ZmbXBlZy1ncmFwaGVyLndlYi5hcHA6NDQzIiwiZmVhdHVyZSI6IlVucmVzdHJpY3RlZFNoYXJlZEFycmF5QnVmZmVyIiwiZXhwaXJ5IjoxNzA5ODU1OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=")
     load();
   }, [])
 
