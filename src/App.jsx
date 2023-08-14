@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg';
-const ffmpeg = createFFmpeg({ log: true });
+const ffmpeg = createFFmpeg({ log: true
+,  corePath: "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js",
+});
 
 function App() {
   const [video, setVideo] = useState();
@@ -27,7 +29,7 @@ function App() {
     console.log()
   }
   const load = async () => {
-    console.log("BOOT");
+    console.log("BOOTED");
     await ffmpeg.load();
     setReady(true);
   }
