@@ -103,14 +103,14 @@ function App() {
       )}
 
       {video && (
-        <div className='flex space-x-4 justify-center mt-4'>
+        <div className='flex space-x-4 justify-center mt-4 p-1'>
           <label htmlFor="startTime">Start Time (s):</label>
           <input
             id="startTime"
             type="number"
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
-            className='ml-2'
+            className='ml-2 p-1'
           />
 
           <label htmlFor="endTime" className='ml-4'>End Time (s):</label>
@@ -119,7 +119,7 @@ function App() {
             type="number"
             value={endTime}
             onChange={(e) => setEndTime(e.target.value)}
-            className='ml-2'
+            className='ml-2 p-1'
           />
         </div>
       )}
