@@ -86,14 +86,14 @@ function App() {
         id='myInput'
         className='text-center justify-between my-4'
         type="file"
-        name='Upload File'
+        name='Upload Video'
         onChange={(e) => {
           const item = e.target.files?.item(0);
           setVideo(item);
         }}
         style={{ display: 'none' }}
       />
-      <label htmlFor="myInput" className='mt-4 h-5'>Upload File</label>
+      <label htmlFor="myInput" className='mt-4 h-5'>Upload Video</label>
 
       {video && (
         <div className='flex space-x-4 justify-center mt-10'>
