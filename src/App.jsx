@@ -50,7 +50,7 @@ function App() {
       tokenElement.content = tokenContents;
       document.head.appendChild(tokenElement);
     }
-    addTrialToken("AgDi8VIu6wohuoHEIlfO1mpNxW7+MH8EHRkkv8mxNxpRsMBxW13lte2NZ4tDPPfIz1q1ewrscBZCQVksBvNUxAMAAACAeyJvcmlnaW4iOiJodHRwczovL2ZmbXBlZy1ncmFwaGVyLndlYi5hcHA6NDQzIiwiZmVhdHVyZSI6IlVucmVzdHJpY3RlZFNoYXJlZEFycmF5QnVmZmVyIiwiZXhwaXJ5IjoxNzA5ODU1OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=")
+    addTrialToken("AoYEjbnbbcEGhtWRYUEliEA/4hSMEkJlBS/UvgFL0BorISkVGZ7Xh6oxuQl+HEB5/YdGLTBeHccro4Ly57Pz0gwAAACAeyJvcmlnaW4iOiJodHRwczovL2ZmbXBlZy1ncmFwaGVyLndlYi5hcHA6NDQzIiwiZmVhdHVyZSI6IlVucmVzdHJpY3RlZFNoYXJlZEFycmF5QnVmZmVyIiwiZXhwaXJ5IjoxNzE5MzU5OTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZX0=")
     load();
   }, [])
 
