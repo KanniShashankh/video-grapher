@@ -22,6 +22,12 @@ function App() {
     setDownloadUrl(url);
     setDownloadName('waveform.png');
   }
+  const loadSampleVideo = async () => {
+    const response = await fetch('./src/assets/sample.mkv');
+    const blob = await response.blob();
+    const file = new File([blob], 'sample.mkv', { type: 'video/mkv' });
+    setVideo(file);
+  };
 
   const convertToGif = async () => {
     ffmpeg.FS('writeFile', 'test.mov', await fetchFile(video));
@@ -68,7 +74,18 @@ function App() {
       <div>
         <p className="font-mono p-52 text-6xl mt-4 text-center">The Video Grapher</p>
       </div>
-
+      <button
+        onClick={loadSampleVideo}
+        style={{
+          background: 'none',
+          border: 'none',
+          padding: '0',
+          margin: '0 20px 0 0',
+          cursor: 'pointer',
+        }}
+      >
+        Load Sample Video
+      </button>
       {video && (
         <div className='flex space-x-4 justify-center mt-10'>
           <video
@@ -80,6 +97,7 @@ function App() {
             src={URL.createObjectURL(video)}>
           </video>
         </div>
+        
       )}
 
       <input
