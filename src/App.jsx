@@ -104,6 +104,7 @@ function App() {
         id='myInput'
         className='text-center justify-between my-4'
         type="file"
+        accept="video/*"
         name='Upload Video'
         onChange={(e) => {
           const item = e.target.files?.item(0);
